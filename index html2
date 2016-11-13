@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>URBAN JUNGLE</title>
+<link href=./style.css type="text/css2" rel="stylesheet"/>
 </head>
 <body>
 <div class="header">
