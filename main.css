@@ -16,8 +16,6 @@ h3 {
     font-family: sans-serif,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(255,123,202);
     font-size: 32px;
-    background-image: url("https://www.patek phillip.com/wrist watch jpg");
-    background-size: cover;
 }
 .nav {
     color: #ffffff;
@@ -40,4 +38,9 @@ li {
     display: inline;
     margin: 0;
     padding-block-end: 
+}
+image {
+    background-image: ("https://www.gettyimages.com/detail/photo/watch-royalty-free-image/171585756");
+    background-size: cover;
+    background-position: center;
 }
