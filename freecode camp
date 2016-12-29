@@ -13,3 +13,35 @@ function updateRecords(id, prop, value) {
   }
   return collection;
 }
+
+var myIndex = -1;
+  for (var i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === firstName) {
+      myIndex = i;
+      break;
+    }
+  }
+  
+  if (myIndex == -1) {
+    return "No such contact";
+  } else if (contacts[myIndex].hasOwnProperty(prop) === false) {
+    return "No such property";
+  } else {
+    return contacts[lookUpIndex][prop];
+  }
+  function randomFraction() 
+  Math.random(2/4);
+  return 0.2;
+
+  function randomWholeNum() { 
+
+  return Math.floor(Math.random()*10);
+}
+
+function randomRange(myMin, myMax) {
+return Math.floor(Math.random() * (myMax - myMin + 1)) +myMin;
+}
+var testString = "there are 6 words in 7 arrays";
+var expression = /\d+/g;
+var digiCount = testString.match(expression).length;
+
