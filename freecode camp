@@ -45,3 +45,24 @@ var testString = "there are 6 words in 7 arrays";
 var expression = /\d+/g;
 var digiCount = testString.match(expression).length;
 
+var testString = "how many white spaces are in this statement";
+var expression = /\s+/g;
+var whiteSpace = testString.match(expression).length;
+
+var testString = "count number of non white spaces on this string";
+var expression = /\S/g;
+var nonWhiteSpace = testString.match(expression).length;
+
+var motorBike = {
+"wheels":2,
+  "engines":1,
+  "seats":3
+};
+
+var MotorBike = function() {
+this.wheels = 2;
+  this.engines = 1;
+  this.seats = 3;
+};
+
+
