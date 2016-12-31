@@ -66,3 +66,83 @@ this.wheels = 2;
 };
 
 
+var Car = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 5;
+
+};
+
+var myCar = new Car();
+ myCar.nickname = "monster";
+
+var Car = function(wheels,seats,engines) {
+  //Change this constructor
+  this.wheels = wheels;
+  this.seats = seats;
+  this.engines = engines;
+};
+var myCar = new Car(4, 5, 1);
+
+
+var Bike = function() {
+
+var gear=0;
+  this.setGear = function(change) {
+ gear = change;
+  };
+  this.getGear = function(){
+    return gear;
+  };
+};
+
+var oldArray = [1,2,3,4,5];
+
+var newArray = oldArray.map(function(val) {
+                            return val + 3 ;
+                            });
+
+var array = [4,5,6,7,8];
+var singleVal = 0;
+var singleVal =array.reduce(function(previousVal,singleVal) {
+  return previousVal - singleVal;
+},30);
+singleVal = 30;
+
+var oldArray = [1,2,3,4,5,6,7,8,9,10];
+oldArray = oldArray.filter(function(val) {
+  return val < 8;
+});
+var newArray = [1,2,3,4,5,6,7];
+var oldArray = [1,2,3,4,5,6,7,8,9,10];
+
+var array = [1, 12, 21, 2];
+
+array.sort(function(a,b) {
+  return b - a;
+});
+
+var array = [1,2,3,4,5,6,7];
+var newArray = [];
+array.reverse();
+newArray = [7,6,5,4,3,2,1];
+
+
+var oldArray = [1,2,3];
+var newArray = [];
+
+var concatMe = [4,5,6];
+newArray = oldArray.concat(concatMe);
+newArray = [1,2,3,4,5,6];
+
+
+var string = "Split me into an array";
+var array = [];
+var string = string.split('s');
+array = ['split', 'me', 'into', 'an', 'array'];
+
+
+
+
+
+
