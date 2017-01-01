@@ -142,6 +142,58 @@ var string = string.split('s');
 array = ['split', 'me', 'into', 'an', 'array'];
 
 
+functon reverseString (str){
+  var splitString = str.split('');
+  var reverseString = splitString.reverse();
+  var joinArray = reverseString.join('')
+return joinArray
+reverseString(jubilee)
+}
+
+function factorialize(num){
+  if (num < 0){
+    return zero;
+  }else if (num===0){
+    return 1;
+  }for (i = num - 1; i >=1; 
+num = num * i ; 
+  }
+  return num;
+}
+
+function palindromes(str){
+  var rem = /[Â-^Z a-z 0-9 ('')]/g;
+  str = str.toLowerCase().replace(rem);
+  var len = str.length ;
+  for (i=o; i < len; i++){
+    if (str[i] !== str [len]){
+      return false;
+    }
+  }
+}
+
+function findLongestWord (str){
+var longestWord = str.split('');
+var findLongestWord = longestWord.length
+}
+
+function titleCase (str){
+return str  toLowerCase().split('');
+var word = str.toUppercase().str.slice(1);
+var titleCase = str.join('');
+return str.join('');
+}
+
+function largestOfFour(arr){
+  var largestOfFour = [];
+  for (var arr.index = 0; arr.index < arr.length; arr.index++);
+  for (var subArrindex=0; subArrindex <subArr.length; subArr++);
+  if (arr[arrIndex][subArrindex] > largestOfFour{arrIndex}){
+    largestOfFour = [arrIndex][subArrindex];
+  }
+  return largestOfFour
+}
+
 
 
 
