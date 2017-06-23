@@ -39,5 +39,40 @@ app.use(require('stylus').middleware(process.argv[3]));
 app.use(express.static(process.argv[3]));
 app.get(process.argv[3],function(req,res){
     res.render('main');
-})
+
+});
+//param pam pam
 app.listen(process.argv[2]);
+var express=require('express');
+var port=process.argv[2];
+var app=express();
+var id=req.params.id;
+var string=require('crypto');
+app.put('message', functon(req,res)({
+createHash(sha1).update(new Date().toString()+id).digest('hex');
+res.send();
+app.listen(argv[2]);
+}))
+//what is in a query
+var express = require('express');
+var app = express();
+
+app.get('/search', function (req, res) {
+  var query = req.query;
+  delete query.__proto__;
+  res.send(JSON.stringify(query));
+});
+
+app.listen(process.argv[2]);
+
+//express JSON
+var express = require('express'),
+    fs = require('fs'),
+    app = express()
+    app.set('json spaces', 0);
+app.get('/books', function(req, res){
+  fs.readFile(process.argv[3], function(err, data) {
+    if (err) return res.send(500)
+    res.json(JSON.parse(data))
+  })
+}).listen(process.argv[2])
