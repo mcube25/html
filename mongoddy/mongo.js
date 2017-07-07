@@ -69,3 +69,112 @@ mongo.connect(url, function(err, db) {
     db.close()
   })
 });
+//db complete update
+var mongo = require('mongodb').MongoClient
+
+var url = 'mongodb://localhost:27017/' + process.argv[2]
+mongo.connect(url, function(err, db) {
+  if (err) throw err
+  var collection = db.collection('users')
+  collection.update({
+    username: 'tinatime'
+  }, {
+    $set: {
+      age: 40
+    }
+  }, function(err) {
+    if (err) throw err
+    db.close()
+  })
+})
+//db complete remove
+var mongo = require('mongodb').MongoClient;
+
+var url = 'mongodb://localhost:27017/' + process.argv[2];
+mongo.connect(url, function(err, db) {
+  if (err) throw err;
+  var collection = db.collection(process.argv[3]);
+  collection.remove({
+    _id: process.argv[4]
+  }, function(err) {
+    if (err) throw err;
+    db.close();
+  })
+})
+//db complete count
+var mongo = require('mongodb').MongoClient;
+var url = 'mongodb://localhost:27017/learnyoumongo';
+
+mongo.connect(url, function(err, db) {
+  if (err) throw err;
+  var collection = db.collection('parrots');
+  collection.count({
+    age: {
+      // greater than integer
+      $gt: parseInt(process.argv[2])
+    }
+  }, function(err, count) {
+    if (err) throw err;
+    console.log(count);
+    db.close();
+  })
+})
+//db aggregate
+var mongo = require('mongodb').MongoClient;
+var url = 'mongodb://localhost:27017/learnyoumongo';
+
+mongo.connect(url, function(err, db) {
+  if (err) throw err;
+// [
+//  { status: 'A', value: 1 },
+//  { status: 'B', value: 2 },
+//  { status: 'A', value: 10 }
+// ]
+
+var collection=collection.aggregate([
+  { $match: { status: 'A' }}
+, { $group: {
+    _id: 'total' // This can be an arbitrary string in this case
+  , total: {
+      // $sum is the operator used here
+      $sum: '$value'
+    }
+  }}
+]).toArray(function(err, results) {
+  // handle error
+  console.log(results)
+  // => [
+  // =>   { _id: 'total', total: 11 }
+  // => ]
+})
+})
+//db rounding
+var mongo = require('mongodb').MongoClient
+var size = process.argv[2]
+
+var url = 'mongodb://localhost:27017/learnyoumongo'
+
+mongo.connect(url, function(err, db) {
+  if (err) throw err
+  var prices = db.collection('prices')
+  prices.aggregate([{
+    $match: {
+      size: size
+    }
+  }, {
+    $group: {
+      _id: 'total',
+      total: {
+        $avg: '$price'
+      }
+    }
+  }]).toArray(function(err, results) {
+    if (err) throw err
+    if (!results.length) {
+      throw new Error('No results found')
+    }
+    var o = results[0]
+    console.log(Number(o.total).toFixed(2))
+    db.close()
+  })
+})
